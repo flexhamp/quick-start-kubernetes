@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: consul
+spec:
+  containers:
+  - name: consul
+    image: consul:1.8.8
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 8500
+      initialDelaySeconds: 90
+      periodSeconds: 10
+    readinessProbe:
+      httpGet:
+        path: /
+        port: 8500
+      initialDelaySeconds: 90
+      periodSeconds: 10
+
