@@ -21,8 +21,8 @@ function preset_centos() {
   systemctl disable firewalld
 
   yum update -y
-  yum install yum-utils -y
-  yum install epel-release -y
+  yum install yum-utils -y && \
+  yum install epel-release -y && \
   yum install htop mc tree vim -y
 
   mkdir ~/.ssh
